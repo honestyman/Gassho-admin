@@ -1,0 +1,51 @@
+.App{
+  font-family: "Yu Gothic";
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.contain{
+  height: 900px;
+}
+.main{
+  width: 98%;
+  height: 95%;
+}
+.chagepasswod{
+    max-width: 390px;
+    height: 844px;
+  background-image: url("../public/back.png");
+}
+.login{
+  margin: auto;
+  height: 960px;
+
+}
+.admin{
+  height: 960px;
+}
+table{
+  font-family: Yu Gothic;
+}
+td, th {
+  border: 1px solid #8a8888;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+} 
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
