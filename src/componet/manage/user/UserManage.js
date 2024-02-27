@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button, Input, Radio } from "antd";
-import { SearchOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { SearchOutlined, UndoOutlined } from '@ant-design/icons';
 
 
 const UserManage=()=>{
@@ -41,14 +41,28 @@ const UserManage=()=>{
   }, [flag]);
   
   const handleSearch=()=>{
-    setSearchName(name);
-    setSearchEmail(email);
-    setSearchRadio(radio);
-    setSearchRegistedStart(registedstart);
-    setSearchRegistedEnd(registedend);
-    setSearchWithdrawalStart(withdrawalstart);
-    setSearchWithdrawalEnd(withdrawalend);
-    setSearchClicked(true);
+    if(name || email || radio || registedstart || registedend || withdrawalstart || withdrawalend){
+      setSearchName(name);
+      setSearchEmail(email);
+      setSearchRadio(radio);
+      setSearchRegistedStart(registedstart);
+      setSearchRegistedEnd(registedend);
+      setSearchWithdrawalStart(withdrawalstart);
+      setSearchWithdrawalEnd(withdrawalend);
+      setSearchClicked(true);
+    }else{
+      setSearchClicked(false);
+    }
+  }
+  const handleReset=()=>{
+      setName("")
+      setEmail("");
+      setRadio("");
+      setRegistedStart("");
+      setRegistedEnd("");
+      setWithdrawalStart("");
+      setWithdrawalEnd("");
+      setSearchClicked(false);
   }
   
   const checkRegistedDate=(value)=>{
@@ -108,35 +122,35 @@ const UserManage=()=>{
       <div className="w-full h-10 mb-4">
         <p className="text-2xl text-left mx-10 font-bold">ユーザー一覧</p>
       </div>
-      <div className="w-full mb-4 flex">
-        <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/2 text-center text-xl font-medium py-2">お名前</div>
+      <div className="w-full mb-4 flex text-right">
+        <div className="w-1/3 h-10 px-2 flex">
+          <div className="w-1/2 text-center text-sm font-medium py-2">お名前</div>
           <Input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="w-1/2"/>
         </div>
-        <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/3 text-center text-xl font-medium py-2">ユーザー登録日</div>
-          <Input type="date" value={registedstart} onChange={(e)=>setRegistedStart(e.target.value)} className="w-1/4"/>
-          <p className="mx-8 my-1">~</p>
-          <Input type="date" value={registedend} onChange={(e)=>setRegistedEnd(e.target.value)} className="w-1/4"/>
+        <div className="w-2/3 h-10 px-10 flex">
+          <div className="w-1/3 text-center text-sm font-medium py-2 min-w-min">ユーザー登録日</div>
+          <Input type="date" value={registedstart} onChange={(e)=>setRegistedStart(e.target.value)} className="w-1/4 min-w-min"/>
+          <p className="mx-2 my-1">~</p>
+          <Input type="date" value={registedend} onChange={(e)=>setRegistedEnd(e.target.value)} className="w-1/4 min-w-min"/>
         </div>
       </div>
 
       <div className="w-full mb-4 flex">
-        <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/2 text-center text-xl font-medium py-2">メールアドレス</div>
+        <div className="w-1/3 h-10 px-2 flex">
+          <div className="w-1/2 text-center text-sm font-medium py-2">メールアドレス</div>
           <Input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className="w-1/2"/>
         </div>
-        <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/3 text-center text-xl font-medium py-2">退会日</div>
-          <Input type="date" value={withdrawalstart} onChange={(e)=>setWithdrawalStart(e.target.value)} className="w-1/4"/>
-          <p className="mx-8 my-1">~</p>
-          <Input type="date" value={withdrawalend} onChange={(e)=>setWithdrawalEnd(e.target.value)} className="w-1/4"/>
+        <div className="w-2/3 h-10 px-10 flex">
+          <div className="w-1/3 text-center text-sm font-medium py-2 min-w-min">退会日</div>
+          <Input type="date" value={withdrawalstart} onChange={(e)=>setWithdrawalStart(e.target.value)} className="w-1/4 min-w-min"/>
+          <p className="mx-2 my-1">~</p>
+          <Input type="date" value={withdrawalend} onChange={(e)=>setWithdrawalEnd(e.target.value)} className="w-1/4 min-w-min"/>
         </div>
       </div>
 
       <div className="w-full mb-4 flex">
-          <div className="w-1/4 text-center text-xl font-medium mx-4 py-2">ステータス</div>
-          <div className="w-1/2 py-2 text-left">
+          <div className="w-1/4 text-center text-sm font-medium mx-4 py-2">ステータス</div>
+          <div className="w-1/2 py-2 text-left text-sm">
             <RadioGroup value={radio} onChange={(e)=>setRadio(e.target.value)}>
               <Radio value={"年額プラン"}>年額プラン</Radio>
               <Radio value={"月額プラン"}>月額プラン</Radio>
@@ -145,9 +159,10 @@ const UserManage=()=>{
             </RadioGroup>
           </div> 
       </div>
-      <Button onClick={handleSearch} className="w-40"><div className="flex mx-8"><SearchOutlined className="mt-1 mr-2"/>検 索</div></Button>
+        <Button onClick={handleSearch} className="w-40 bg-black text-white mx-2"><div className="flex mx-8"><SearchOutlined className="mt-1 mr-2"/>検 索</div></Button>
+        <Button onClick={handleReset} className="w-40 bg-black text-white mx-2"><div className="flex mx-8"><UndoOutlined className="mt-1 mr-2"/>リセット</div></Button>
       <div className="w-full h-2/3 mt-5 p-5 overflow-y-auto">
-      <table className="w-full border-collapse text-center mt-4 mx-auto shadow-md">
+      <table className="w-full border-collapse text-center text-sm mt-4 mx-auto shadow-md">
             <thead className="border">
               <tr>
                 <th></th>
@@ -166,7 +181,7 @@ const UserManage=()=>{
                     return(
                       <tr key={index}>
                         <td className="text-blue-500 font-bold underline">
-                          <Link to={'user_detail/' + data.id}><EllipsisOutlined /> 詳細</Link></td>
+                          <Link to={'user_detail/' + data.id}>詳細</Link></td>
                         <td>{index+1}</td>
                         <td>{data.name}</td>
                         <td>{data.email}</td>
@@ -180,7 +195,7 @@ const UserManage=()=>{
                   return(
                     <tr key={index}>
                       <td className="text-blue-500 font-bold underline">
-                        <Link to={'user_detail/' + data.id}><EllipsisOutlined /> 詳細</Link></td>
+                        <Link to={'user_detail/' + data.id}>詳細</Link></td>
                       <td>{index+1}</td>
                       <td>{data.name}</td>
                       <td>{data.email}</td>

@@ -81,7 +81,7 @@ const IntroductionUpdate=()=>{
         <p className="text-3xl mt-20 mb-10 font-bold text-center">アイテムアップデート（「合唱」をどうやって知りましたか）</p>
         <form className="ml-24">
           <div>
-          <p className='text-xl mx-2 my-2 mr-14 text-left'>日本語質問 :</p>
+          <p className='text-sm mx-2 my-2 mr-14 text-left'>日本語質問 :</p>
           </div>
           <Input className='w-5/6 h-10'
                 type="text"
@@ -92,7 +92,7 @@ const IntroductionUpdate=()=>{
               />
           <p className="ml-2 mt-1 text-left text-red-500">{validTextIntroduction}</p>
 
-          <p className='text-xl mx-2 my-2 mr-14 text-left'>English Question :</p>
+          <p className='text-sm mx-2 my-2 mr-14 text-left'>English Question :</p>
           <Input className='w-5/6 h-10'
                 type="text"
                 name="filename"

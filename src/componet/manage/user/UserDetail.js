@@ -131,7 +131,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 h-10 text-center text-xl font-medium py-2">ID</div>
+          <div className="w-1/4 h-10 text-center text-sm font-medium py-2">ID</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{reasondatas.id}</p>  
           </div>
@@ -139,7 +139,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">お名前</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">お名前</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{reasondatas.name}</p>  
           </div>
@@ -147,7 +147,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">ユーザー登録日</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">ユーザー登録日</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{getRegistedate()}</p>  
           </div>
@@ -155,7 +155,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">国</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">国</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{reasondatas.country}</p>  
           </div>
@@ -163,7 +163,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">メールアドレス</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">メールアドレス</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{reasondatas.email}</p>  
           </div>
@@ -171,7 +171,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">GASSHOを何で知りましたか？</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">GASSHOを何で知りましたか？</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{getIntroductions()}</p>  
           </div>
@@ -179,7 +179,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-20 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">GASSHOを使う理由</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">GASSHOを使う理由</div>
           <div className="w-3/4 h-20 bg-gray-100 text-left border rounded-md p-2 flex-wrap">
             <p>{getReasons()}</p>
           </div>
@@ -187,7 +187,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full my-2 flex">
         <div className="w-full h-32 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">ステータス履歴</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">ステータス履歴</div>
           <div className="w-3/4 h-32 bg-gray-100 px-2 border rounded-md overflow-y-auto">
             <table className="w-full text-center mt-2">
               <thead className="border">
@@ -217,7 +217,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full my-2 flex">
         <div className="w-full h-32 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">投げ銭履歴</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">投げ銭履歴</div>
           <div className="w-3/4 h-32 bg-gray-100 px-2 border rounded-md overflow-y-auto">
             <table className="w-full text-center mt-2">
               <thead className="border">
@@ -248,7 +248,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full my-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">退会日</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">退会日</div>
           <div className="w-3/4 h-10 bg-gray-100 text-left border rounded-md p-2">
             <p>{getDeletedDate()}</p>  
           </div>

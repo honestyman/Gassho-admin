@@ -3,18 +3,14 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Button, Input, Radio, Select,InputNumber, Upload } from "antd";
+import { Button, Input, Radio} from "antd";
 import { ArrowLeftOutlined, SaveOutlined } from '@ant-design/icons';
-import TextArea from "antd/es/input/TextArea";
 
 
 const UpdateTag=()=>{
-  const navigate=useNavigate()
-  const RadioGroup=Radio.Group;
   const Id=useParams().id
   // -------view
   const [flag, setFlage] = useState(true);
-  const [deleted, setDeleted]=useState(false);
   const [datas, setDatas] = useState([]);
 
   const [name, setName]=useState("");
@@ -39,7 +35,7 @@ const UpdateTag=()=>{
 
   const handleAdd =async()=> {
     if(!name){
-      setValidName("タグ名は有効です。");
+      setValidName("タグ名を入力してください。");
     }else{
       setValidName("");
     }
@@ -63,12 +59,12 @@ const UpdateTag=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">タグ名称</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">タグ名称</div>
           <Input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="w-3/4"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2"></div>
+          <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <p className="mx-6 text-red-500">{valideName}</p>
       </div>
       

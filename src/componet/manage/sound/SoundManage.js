@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button, Input, Radio, Select } from "antd";
-import { SearchOutlined, EditOutlined, DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { SearchOutlined, EditOutlined, DeleteOutlined, PlusCircleOutlined, UndoOutlined } from '@ant-design/icons';
 
 
 const SoundManage=()=>{
@@ -46,17 +46,29 @@ const SoundManage=()=>{
   }, [flag, deleted]);
 
   const handleSearch=()=>{
-    setSearchContentId(contenId);
-    let temp=""
-    if(tag){
-      for(let i=0;i<tag.length; i++){
-        temp=temp+tag[i]+"/"
+    if(contenId || tag || title){
+      setSearchContentId(contenId);
+      let temp=""
+      if(tag){
+        for(let i=0;i<tag.length; i++){
+          temp=temp+tag[i]+"/"
+        }
       }
+      setSearchTag(temp.slice(0, temp.length-1));
+      setSearchTitle(title);
+      setSearchClicked(true);
+    }else{
+      setSearchClicked(false);
     }
-    setSearchTag(temp.slice(0, temp.length-1));
-    setSearchTitle(title);
-    setSearchClicked(true);
+    
   }
+  const handleReset=()=>{
+    setContentId("")
+    setTag("");
+    setTitle("");
+    setSearchClicked(false);
+  }
+
   const changeTags=(value)=>{
     console.log(value)
     setTag(value);
@@ -122,11 +134,11 @@ const SoundManage=()=>{
       </div>
       <div className="w-full mb-4 flex">
         <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/2 text-center text-xl font-medium py-2">音源ID</div>
+          <div className="w-1/2 text-center text-sm font-medium py-2">音源ID</div>
           <Input value={contenId} onChange={(e)=>setContentId(e.target.value)} type="text" className="w-1/2"/>
         </div>
         <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/3 text-center text-xl font-medium py-2">タグ</div>
+          <div className="w-1/3 text-center text-sm font-medium py-2">タグ</div>
           <Select className="w-2/3" 
             mode="multiple"
             value={tag}
@@ -142,16 +154,17 @@ const SoundManage=()=>{
 
       <div className="w-full mb-4 flex">
         <div className="w-1/2 h-10 px-10 flex">
-          <div className="w-1/2 text-center text-xl font-medium py-2">タイトル</div>
+          <div className="w-1/2 text-center text-sm font-medium py-2">タイトル</div>
           <Input value={title} onChange={(e)=>setTitle(e.target.value)} type="text" className="w-1/2"/>
         </div>
       </div>
-      <Button onClick={handleSearch} className="w-40"><div className="flex mx-8"><SearchOutlined className="mt-1 mr-2"/>検 索</div></Button>
+      <Button onClick={handleSearch} className="w-40 bg-black text-white"><div className="flex mx-8"><SearchOutlined className="mt-1 mr-2"/>検 索</div></Button>
+      <Button onClick={handleReset} className="w-40 bg-black text-white mx-2"><div className="flex mx-8"><UndoOutlined className="mt-1 mr-2"/>リセット</div></Button>
       <div className="w-full text-left mx-10">
-      <Link to="/admin/manage/add_sound"><Button type="primary" className="w-40 text-black border-gray-300"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>音源新規登録</div></Button></Link>
+      <Link to="/admin/manage/add_sound"><Button type="primary" className="w-40 text-white border-gray-300 bg-purple-700"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>音源新規登録</div></Button></Link>
       </div>
       <div className="w-full h-2/3 p-5 overflow-y-auto">
-      <table className="w-full border-collapse text-center mt-4 mx-auto shadow-md">
+      <table className="w-full border-collapse text-center text-sm mt-4 mx-auto shadow-md">
             <thead className="border">
               <tr>
                 <th>操作</th>

@@ -24,17 +24,17 @@ const AddNotification=()=>{
 
   const handleAdd=async()=>{   
     if(!japanesetext){
-      setValidJapaneseText("メッセージ（日）は有効です。");
+      setValidJapaneseText("メッセージ（日）を入力してください。");
     }else{
       setValidJapaneseText("");
     }
     if(!englishtext){
-      setValidEnglishText("メッセージ（英）は有効です。");
+      setValidEnglishText("メッセージ（英）を入力してください。");
     }else{
       setValidEnglishText("");
     }
     if(!senddate || !sendtime){
-      setValidDate("送信日時は有効です。");
+      setValidDate("送信日時を入力してください。");
     }else{
       setValidDate("");
     }
@@ -60,33 +60,33 @@ const AddNotification=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-32 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-12">メッセージ（日）</div>
+          <div className="w-1/4 text-center text-sm font-medium py-12">メッセージ（日）</div>
           <TextArea value={japanesetext} onChange={(e)=>setJapaneseText(e.target.value)} className="w-3/4"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2"></div>
+          <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <p className="mx-6 text-red-500">{validJapanesetext}</p>
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-32 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-12">メッセージ（英）</div>
+          <div className="w-1/4 text-center text-sm font-medium py-12">メッセージ（英）</div>
           <TextArea value={englishtext} onChange={(e)=>setEnglishText(e.target.value)} className="w-3/4"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2"></div>
+          <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <p className="mx-6 text-red-500">{validEnglishtext}</p>
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">送信日時</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">送信日時</div>
           <Input value={senddate} onChange={(e)=>setSendDate(e.target.value)} type="date" className="w-1/5"/>
           <Input value={sendtime} onChange={(e)=>setSendTime(e.target.value)} type="time" className="w-1/5 mx-2"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2"></div>
+          <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <p className="mx-6 text-red-500">{validDate}</p>
       </div>
       <div className="w-full text-center my-10 flex">

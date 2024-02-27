@@ -61,7 +61,7 @@ const NotificationManage = () => {
         <Link to="/admin/manage/add_notification"><Button type="primary" className="w-40 text-black border-gray-300"><div className="flex mx-4"><PlusCircleOutlined className="mr-2" />新規登録</div></Button></Link>
       </div>
       <div className="w-full h-2/3 p-5 overflow-y-auto">
-        <table className="w-full border-collapse text-center mt-4 mx-auto shadow-md">
+        <table className="w-full border-collapse text-center text-sm mt-4 mx-auto shadow-md">
           <thead className="border">
             <tr>
               <th>操作</th>

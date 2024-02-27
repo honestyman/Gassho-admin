@@ -42,7 +42,7 @@ const Login=()=>{
         </p>
         <form>
           <div className="w-96 m-auto">
-           <p className='text-xl text-gray-700 m-2 text-left'>名前 :</p>
+           <p className='text-sm text-gray-700 m-2 text-left'>名前 :</p>
           </div>
           <Input className='w-96 h-10 rounded p-2 mx-auto mb-4 border border-gray-400 rounded'
                 type="text"
@@ -52,7 +52,7 @@ const Login=()=>{
                 value={name}
               />
           <div className="w-96 m-auto">
-            <p className='text-xl text-gray-700 m-2 mr-14 text-left'>パスワード:</p>
+            <p className='text-sm text-gray-700 m-2 mr-14 text-left'>パスワード:</p>
           </div>
           <Input className='w-96 h-10rounded p-2 border border-gray-400 rounded'
                 type="password"

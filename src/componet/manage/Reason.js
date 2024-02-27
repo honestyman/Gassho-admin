@@ -120,7 +120,7 @@ const Reason=()=>{
         <p className="text-3xl mb-10 font-bold">アイテムを追加</p>
         <form>
           <div className="m-atuo">
-          <p className='text-xl mx-12 my-2 mr-14 text-left'>日本語質問 :</p>
+          <p className='text-sm mx-12 my-2 mr-14 text-left'>日本語質問 :</p>
           </div>
           <Input className='w-5/6 h-10'
                 type="text"
@@ -130,7 +130,7 @@ const Reason=()=>{
                 value={textReason}
               />
           <p className="ml-12 mt-1 text-left text-red-500">{validTextReason}</p>
-          <p className='text-xl mx-12 my-2 mr-14 text-left'>English Question :</p>
+          <p className='text-sm mx-12 my-2 mr-14 text-left'>English Question :</p>
           <Input className='w-5/6 h-10'
                 type="text"
                 name="en_text"

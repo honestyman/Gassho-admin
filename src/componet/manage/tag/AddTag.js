@@ -20,7 +20,7 @@ const AddTag=()=>{
 
   const handleAdd =async()=> {
     if(!name){
-      setValidName("タグ名は有効です。");
+      setValidName("タグ名を入力してください。");
     }else{
       setValidName("");
     }
@@ -43,12 +43,12 @@ const AddTag=()=>{
       </div>
       <div className="w-full mb-2 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2">タグ名称</div>
+          <div className="w-1/4 text-center text-sm font-medium py-2">タグ名称</div>
           <Input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="w-3/4"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">
-          <div className="w-1/4 text-center text-xl font-medium py-2"></div>
+          <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <p className="mx-6 text-red-500">{valideName}</p>
       </div>
       
