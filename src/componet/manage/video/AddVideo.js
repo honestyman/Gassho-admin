@@ -150,7 +150,7 @@ const AddVideo=()=>{
         englishtitle:englishtitle,
         japanesedescription:japanesedescription,
         englishdescription:englishdescription,
-        vimeourl:vimeourl
+        vimeourl:"vimeo.com/"+vimeourl
       }
       if(file){
         data.filename=file.name
@@ -303,8 +303,8 @@ const AddVideo=()=>{
       </div>
       <div className="w-full mb-1 flex">
         <div className="w-full h-10 px-10 flex">
-          <div className="w-1/4 text-center text-sm font-medium py-2">VimeoURL</div>
-          <Input type="text" value={vimeourl} onChange={(e)=>setVimeoUrl(e.target.value)} placeholder="vimeo.com/395212534" className="w-3/4"/>
+          <div className="w-1/4 text-center text-sm font-medium py-2">VimeoID</div>
+          <Input type="text" value={vimeourl} onChange={(e)=>setVimeoUrl(e.target.value)} placeholder="395212534" className="w-3/4"/>
         </div>
       </div>
       <div className="w-full mb-1 flex">

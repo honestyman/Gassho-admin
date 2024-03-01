@@ -220,7 +220,7 @@ const UpdateSound=()=>{
       };  
       axios.post(process.env.REACT_APP_API+"/item/addsound", formData, config)
         .then((response) => {
-          alert("正確に追加されました。");
+          console.log("success")
         })
         .catch((error) => {
           console.error("Error uploading files: ", error);
