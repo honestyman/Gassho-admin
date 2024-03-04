@@ -29,11 +29,11 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/:id/:token" element={<ChangePassword />}/>
-          <Route path='/admin' element={<Login/>}/>
+          <Route exact path="/:id/:token" element={<ChangePassword />}/>
+          <Route path='/' element={<Login/>}/>
           <Route path='/reason_update' element={<ReasonUpdate/>}/>
           <Route path='/introduction_update' element={<IntroductionUpdate/>}/>
-          <Route path='/admin/manage' element={<Admin/>}>
+          <Route path='/manage' element={<Admin/>}>
             <Route index element={<UserManage/>}/>
             <Route path='user_detail/:id' element={<UserDetail/>}/>
             <Route path='subscription' element={<SubscriptionManage/>}/>

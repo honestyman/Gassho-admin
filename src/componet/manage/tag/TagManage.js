@@ -41,7 +41,7 @@ const TagManage=()=>{
         <p className="text-2xl text-left mx-10 font-bold">タグ管理</p>
       </div>
       <div className="w-full text-left mx-10">
-      <Link to="/admin/manage/add_tag"><Button type="primary" className="w-40 text-black border-gray-300"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>タグ新規登録</div></Button></Link>
+      <Link to="//manage/add_tag"><Button type="primary" className="w-40 text-black border-gray-300"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>タグ新規登録</div></Button></Link>
       </div>
       <div className="w-full h-2/3 p-5 overflow-y-auto">
       <table className="w-full border-collapse text-center text-sm mt-4 mx-auto shadow-md">
@@ -57,7 +57,7 @@ const TagManage=()=>{
                   return (<tr key={index}>
                     <td className="w-40 text-blue-500 font-bold underline">
                       <Link className="mx-2 text-green-500"
-                    to={"/admin/manage/update_tag/"+data.id}
+                    to={"//manage/update_tag/"+data.id}
                     ><EditOutlined /> 編集</Link>
                     <Link className="mx-2 text-red-500"
                     onClick={()=>deleteFunction(data.id)}

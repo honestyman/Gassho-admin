@@ -256,7 +256,7 @@ const UserDetail=()=>{
       </div>
       <div className="w-full text-left my-4">
         <div className="w-1/4 text-center">
-         <Link to="/admin/manage"><Button className="w-40 m-auto"><ArrowLeftOutlined /> 戻 る</Button></Link>
+         <Link to="//manage"><Button className="w-40 m-auto"><ArrowLeftOutlined /> 戻 る</Button></Link>
         </div>        
       </div>
     </div>

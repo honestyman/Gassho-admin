@@ -65,7 +65,7 @@ const IntroductionUpdate=()=>{
       await axios.post("http://localhost:5000/api/introductions/updateintroduction", data).then((res)=>{
         // alert("パスワードは正しく変更されました。");
         // console.log(res.status);
-        navigate("/admin/introduction");
+        navigate("//introduction");
         alert("正確に追加されました。");
       }).catch(error=>{
         console.log(error);
@@ -73,7 +73,7 @@ const IntroductionUpdate=()=>{
     }
   }
   function moveFunction(){
-    navigate("/admin/introduction");
+    navigate("//introduction");
   }
 
   return(

@@ -8,7 +8,7 @@ const Header=()=>{
 
   const handleLogout=()=>{
     localStorage.removeItem('token');
-    navigate("/admin");
+    navigate("/");
   }
   return(
     <div className="text-right h-16 py-3 border shadow-md pb-10">
