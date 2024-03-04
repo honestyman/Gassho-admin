@@ -15,7 +15,7 @@ const Login=()=>{
     // Read the content of localStorage
     const token = localStorage.getItem('token');
     if(token){
-      navigate("//manage");
+      navigate("/manage");
     }
   }, []);
 
@@ -24,7 +24,7 @@ const Login=()=>{
     if(name === 'admin' && password==='gassho'){
       const token = uuidv4();
       localStorage.setItem('token', token); 
-      navigate("//manage");
+      navigate("/manage");
     }
   }
   const changeName=(e)=>{

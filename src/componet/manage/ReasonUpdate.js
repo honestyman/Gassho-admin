@@ -65,7 +65,7 @@ const ReasonUpdate=()=>{
       await axios.post("http://localhost:5000/api/reasons/updatereason", data).then((res)=>{
         // alert("パスワードは正しく変更されました。");
         // console.log(res.status);
-        navigate("//reason");
+        navigate("/reason");
         alert("正確に追加されました。");
       }).catch(error=>{
         console.log(error);
@@ -73,7 +73,7 @@ const ReasonUpdate=()=>{
     }
   }
   function moveFunction(){
-    navigate("//reason");
+    navigate("/reason");
   }
 
   return(

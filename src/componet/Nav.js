@@ -7,7 +7,7 @@ const Nav=()=>{
   return(
     <div className="w-1/5 h-full text-left border shadow-md px-3 py-5">
       <div className="w-full h-10 py-2 pl-1 rounded float-left font-bold text-sm hover:bg-gray-300">
-        <Link to="//manage" className="flex">
+        <Link to="/manage" className="flex">
            <UserAddOutlined /> <p className="mx-2">ユーザー管理</p>
         </Link>
       </div>

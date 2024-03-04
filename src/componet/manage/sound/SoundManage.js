@@ -161,7 +161,7 @@ const SoundManage=()=>{
       <Button onClick={handleSearch} className="w-40 bg-black text-white"><div className="flex mx-8"><SearchOutlined className="mt-1 mr-2"/>検 索</div></Button>
       <Button onClick={handleReset} className="w-40 bg-black text-white mx-2"><div className="flex mx-8"><UndoOutlined className="mt-1 mr-2"/>リセット</div></Button>
       <div className="w-full text-left mx-10">
-      <Link to="//manage/add_sound"><Button type="primary" className="w-40 text-white border-gray-300 bg-purple-700"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>音源新規登録</div></Button></Link>
+      <Link to="/manage/add_sound"><Button type="primary" className="w-40 text-white border-gray-300 bg-purple-700"><div className="flex mx-2"><PlusCircleOutlined className="mr-2"/>音源新規登録</div></Button></Link>
       </div>
       <div className="w-full h-2/3 p-5 overflow-y-auto">
       <table className="w-full border-collapse text-center text-sm mt-4 mx-auto shadow-md">
@@ -183,7 +183,7 @@ const SoundManage=()=>{
                     return (<tr key={index}>
                       <td className="w-40 text-blue-500 font-bold underline">
                         <Link className="mx-2 text-green-500"
-                      to={"//manage/update_video/"+data.id}
+                      to={"/manage/update_video/"+data.id}
                       ><EditOutlined /> 編集</Link>
                       <Link className="mx-2 text-red-500" onClick={()=>deleteFunction(data.id)}
                       ><DeleteOutlined /> 削除</Link>
@@ -200,7 +200,7 @@ const SoundManage=()=>{
                   return (<tr key={index}>
                     <td className="w-40 text-blue-500 font-bold underline">
                       <Link className="mx-2 text-green-500"
-                    to={"//manage/update_sound/"+data.id}
+                    to={"/manage/update_sound/"+data.id}
                     ><EditOutlined /> 編集</Link>
                     <Link className="mx-2 text-red-500" onClick={()=>deleteFunction(data.id)}
                     ><DeleteOutlined /> 削除</Link>

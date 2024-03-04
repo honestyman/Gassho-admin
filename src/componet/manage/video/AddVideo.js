@@ -327,7 +327,7 @@ const AddVideo=()=>{
       </div>
       <div className="w-full text-center my-10 flex">
         <div className="w-1/4 text-center">
-         <Link to="//manage/video"><Button className="w-48 m-auto"><ArrowLeftOutlined /> 戻 る</Button></Link>
+         <Link to="/manage/video"><Button className="w-48 m-auto"><ArrowLeftOutlined /> 戻 る</Button></Link>
         </div>
         <div className="w-3/4 text-center">
         <Button type="primary" onClick={handleAdd} className="w-80 text-black border-gray-300"><div className="flex mx-28"><SaveOutlined className="mr-2"/>登 録</div></Button>
