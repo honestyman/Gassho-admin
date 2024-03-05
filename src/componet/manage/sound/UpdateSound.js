@@ -105,6 +105,7 @@ const UpdateSound=()=>{
   }
   const getFile=(e)=>{
     document.getElementById("image_div").style.display="none";
+    document.getElementById("image_text").style.display="none";
     setFile(e.file.originFileObj)
   }
   const categoryList=()=>{
@@ -386,6 +387,7 @@ const UpdateSound=()=>{
               onChange={getFile} 
             >
               <Button icon={<UploadOutlined />}>Upload</Button>
+              {!datas.main_image_url && <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。</p>}
             </Upload>
           </div>
         </div>
