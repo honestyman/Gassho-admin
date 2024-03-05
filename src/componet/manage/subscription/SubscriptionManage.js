@@ -87,7 +87,11 @@ const SubscriptionManage=()=>{
         if(datas[i].payment){
           result[i].paymentdate=datas[i].payment.createdAt.slice(0,10);
           result[i].amount=datas[i].payment.amount;
-          result[i].status="入金済み"
+          if(datas[i].payment.amount===0){
+            result[i].status="未入金"
+          }else{
+            result[i].status="入金済み"
+          }
         }else{
           result[i].paymentdate=null;
           result[i].amount=null;

@@ -46,8 +46,8 @@ const ChangePassword= (props) => {
   }
 
   return (
-    <div className="chagepasswod pt-24">
-      <p className='mb-56 text-white text-sm text-center font-bold' style={{fontFamily:"Noto Sans CJK JP"}}>パスワードの変更</p>
+    <div className="chagepasswod pt-24 mx-auto">
+      <p className='mb-56 text-white text-xl text-center font-bold' style={{fontFamily:"Noto Sans CJK JP"}}>パスワードの変更</p>
       <form>
         <p className='text-left ml-8 mb-2 text-white'>新しいパスワード</p>
         <input className='w-80 h-10 mx-8 rounded p-2'

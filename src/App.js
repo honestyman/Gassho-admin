@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/:id/:token" element={<ChangePassword />}/>
+          <Route exact path="/verify/:id/:token" element={<ChangePassword />}/>
           <Route path='/' element={<Login/>}/>
           <Route path='/reason_update' element={<ReasonUpdate/>}/>
           <Route path='/introduction_update' element={<IntroductionUpdate/>}/>
