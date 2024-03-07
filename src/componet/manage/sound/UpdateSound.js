@@ -387,11 +387,12 @@ const UpdateSound=()=>{
               onChange={getFile} 
             >
               <Button icon={<UploadOutlined />}>Upload</Button>
-              {!datas.main_image_url && <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。</p>}
+              <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。
+              縦と横の長さが同じでなければなりません。</p>
             </Upload>
           </div>
         </div>
-        {datas.main_image_url && <div id="image_div" className="w-full h-16 mt-2 px-10 flex">
+        {datas.main_image_url && <div id="image_div" className="w-full h-16 mt-8 px-10 flex">
         <div className="w-1/4 text-center text-sm font-medium py-2"></div>
           <div className="w-1/2 flex text-sm font-medium border rounded p-2">
             <img src={process.env.REACT_APP_SERVER+datas.main_image_url} className="w-12"/>

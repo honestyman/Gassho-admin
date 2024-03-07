@@ -338,7 +338,8 @@ const AddSound=()=>{
               onChange={getFile} 
             >
               <Button icon={<UploadOutlined />}>Upload</Button>
-              <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。</p>
+              <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。
+              縦と横の長さが同じでなければなりません。</p>
             </Upload>
           </div>
         </div>
