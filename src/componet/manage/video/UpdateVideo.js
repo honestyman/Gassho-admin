@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Button, Input, Radio, Select,InputNumber, Upload } from "antd";
+import { Button, Input, Radio, Select,message, Upload } from "antd";
 import { ArrowLeftOutlined, SaveOutlined, UploadOutlined } from '@ant-design/icons';
 import TextArea from "antd/es/input/TextArea";
 
@@ -30,7 +30,8 @@ const UpdateVideo=()=>{
   const [time, setTime]=useState(0)
   const [vimeourl, setVimeoUrl]=useState("")
   const [file, setFile] = useState();
-  const [filename, setFileName] = useState("");
+  const [fileflag, setFileFlag] = useState(true);
+
 
   const [validTemple, setValidTemple]=useState("")
   const [validOrder, setValidOrder]=useState("")
@@ -104,7 +105,9 @@ const UpdateVideo=()=>{
   const getFile=(e)=>{
     document.getElementById("image_div").style.display="none";
     document.getElementById("image_text").style.display="none";
-    setFile(e.file.originFileObj)
+    if(fileflag===true){
+      setFile(e.file.originFileObj)
+    }
   }
   const categoryList=()=>{
     var str=[];
@@ -128,9 +131,29 @@ const UpdateVideo=()=>{
     return str;
   }
 
-  function onChangeOrder(value) {
-    setOrder(value);
-  }
+  const handleBeforeUpload = async (file) => {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+    const maxPixels = 500 * 500; // Maximum number of pixels
+
+    if (!isJpgOrPng) {
+      message.error('アップロードできる画像はJPG/PNGのみです！');
+      setFileFlag(false);
+    }
+
+    // Calculate image dimensions using createImageBitmap
+    const image = await createImageBitmap(file);
+    const width = image.width;
+    const height = image.height;
+    const pixels = width * height;
+
+    if (pixels > maxPixels) {
+      message.error(`画像のサイズは500x500ピクセルを超えないこと！`);
+      setFileFlag(false);
+    }
+    
+    return isJpgOrPng && pixels <= maxPixels;
+  };
+
   const handleAdd=async()=>{
     var updated=false;
     if(!temple){
@@ -367,13 +390,12 @@ const UpdateVideo=()=>{
           <Upload
               action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
               listType="picture"
-              // defaultFileList={fileList()}
+              beforeUpload={handleBeforeUpload}
               onChange={getFile} 
             >
               <Button icon={<UploadOutlined />}>Upload</Button>
             </Upload>
-           <p id="image_text" className="m-1 text-gray-500">画像のサイズは500*500以下であれば可能です。
-           縦と横の長さが同じでなければなりません。</p>
+           <p id="image_text" className="m-1 text-gray-500">画像のサイズは500px*500px以下の正方形。</p>
           </div>
         </div>
         {datas.main_image_url && <div id="image_div" className="w-full h-16 mt-8 px-10 flex">
