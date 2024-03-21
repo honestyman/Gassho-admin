@@ -22,7 +22,7 @@ const ChangePassword= (props) => {
         password: password
       };
       await axios.post(process.env.REACT_APP_API+"/auth/new_password", data).then((res)=>{
-        // alert("パスワードは正しく変更されました。");
+         alert("パスワードが正確に変更されました。");
         console.log(res.status);
       }).catch(error=>{
         console.log(error);
